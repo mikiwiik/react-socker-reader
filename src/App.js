@@ -13,8 +13,11 @@ class App extends Component {
             .on('connect', () => {
                 //console.log('CONNECT');
             })
-            .on('messages', (data) => {
-                this.setState({messages: data});
+            .on('messages', (messages) => {
+                this.setState({messages: messages});
+            })
+            .on('message-added', (message) => {
+                this.setState({messages: [...this.state.messages, message]});
             })
             .on('disconnect', () => {
                 //console.log('DISCONNECT');
@@ -32,6 +35,7 @@ class App extends Component {
         return <div className={App}>
             <ul>
                 {this.renderMessages()}
+                <button onClick={() => this.socket.emit('add-message')}>add message</button>
             </ul>
         </div>;
     }

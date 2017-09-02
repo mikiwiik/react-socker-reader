@@ -9,6 +9,11 @@ io.on('connection', (client) => {
     client.on('get-messages', () => {
         io.emit('messages', messages.get());
     });
+
+    client.on('add-message', () => {
+        io.emit('message-added', messages.add());
+    });
+
     client.on('disconnect', () => {
         console.log('disconnect')
     });

@@ -13,5 +13,10 @@ for (let i = 0; i < 10; i++) {
 export default {
     get() {
         return messages
+    },
+    add() {
+        const message = createMessage(messages.length);
+        messages.push(message);
+        return message;
     }
 }
