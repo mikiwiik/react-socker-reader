@@ -1,16 +1,25 @@
 import React, {Component} from 'react';
+import io from 'socket.io-client';
+
 import './App.css';
 
 class App extends Component {
 
-    state = { messages: []};
+    state = {messages: []};
+    socket = io('http://localhost:8080');
 
     componentDidMount() {
-        fetch('/messages')
-            .then(response => response.json())
-            .then(messages => {
-                this.setState({messages: messages});
+        this.socket
+            .on('connect', () => {
+                //console.log('CONNECT');
             })
+            .on('messages', (data) => {
+                this.setState({messages: data});
+            })
+            .on('disconnect', () => {
+                //console.log('DISCONNECT');
+            });
+        this.socket.emit('get-messages');
     }
 
     renderMessages() {
