@@ -1,9 +1,17 @@
 import faker from'faker';
 
-export function getMessages(size = 10) {
-    const messages = [];
-    for (let i = 0; i < size; i++) {
-        messages.push({id: i, message: faker.company.catchPhrase()})
+const messages = [];
+
+function createMessage(id) {
+    return {id, message: faker.company.catchPhrase()};
+}
+
+for (let i = 0; i < 10; i++) {
+    messages.push(createMessage(i));
+}
+
+export default {
+    get() {
+        return messages
     }
-    return messages;
 }

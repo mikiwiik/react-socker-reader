@@ -1,12 +1,10 @@
 import restify from 'restify';
 
-import { getMessages } from './messages.js';
-
-const messages = getMessages();
+import messages from './messages.js';
 
 const server = restify.createServer();
 server.get('/messages', (req, res, next) => {
-    res.json(messages);
+    res.json(messages.get());
     next();
 });
 
