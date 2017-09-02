@@ -19,6 +19,11 @@ class App extends Component {
             .on('message-added', (message) => {
                 this.setState({messages: [...this.state.messages, message]});
             })
+            .on('message-toggled', (message) => {
+                const messages = [...this.state.messages];
+                messages[message.id] = message;
+                this.setState({messages: messages});
+            })
             .on('disconnect', () => {
                 //console.log('DISCONNECT');
             });
@@ -27,7 +32,10 @@ class App extends Component {
 
     renderMessages() {
         return this.state.messages.map(message =>
-            <li key={message.id}>{message.message}</li>
+            <li key={message.id}>
+                {message.message}&nbsp;
+                <button onClick={() => this.socket.emit('toggle-message', message.id)}>toggle</button>
+            </li>
         )
     }
 

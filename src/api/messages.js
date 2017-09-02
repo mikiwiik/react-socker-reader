@@ -18,5 +18,11 @@ export default {
         const message = createMessage(messages.length);
         messages.push(message);
         return message;
+    },
+    toggle(messageId) {
+        const toggled = messages[messageId];
+        toggled.message = toggled.message.split('').reverse().join('');
+        messages[messageId] = toggled;
+        return toggled;
     }
 }

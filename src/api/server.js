@@ -14,6 +14,10 @@ io.on('connection', (client) => {
         io.emit('message-added', messages.add());
     });
 
+    client.on('toggle-message', (messageId) => {
+        io.emit('message-toggled', messages.toggle(messageId));
+    });
+
     client.on('disconnect', () => {
         console.log('disconnect')
     });
