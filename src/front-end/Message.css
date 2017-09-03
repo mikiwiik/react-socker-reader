@@ -1,0 +1,9 @@
+.Message {
+    background-color: inherit;
+    transition: background-color, 1s;
+}
+
+.Message-updated {
+    background-color: yellow;
+    transition: background-color, 1s;
+}

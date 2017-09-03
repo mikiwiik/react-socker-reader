@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import io from 'socket.io-client';
 
 import './App.css';
+import Message from './Message';
 
 class App extends Component {
 
@@ -32,10 +33,10 @@ class App extends Component {
 
     renderMessages() {
         return this.state.messages.map(message =>
-            <li key={message.id}>
-                <span className={(message.updated) ? 'App-message-updated' : 'App-message'}>{message.message}</span>
-                <button onClick={() => this.socket.emit('toggle-message', message.id)}>Update</button>
-            </li>
+            <Message id={message.id}
+                     message={message.message}
+                     updated={message.updated}
+                     onClick={() => this.socket.emit('toggle-message', message.id)}/>
         )
     }
 
