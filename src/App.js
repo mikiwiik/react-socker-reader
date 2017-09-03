@@ -42,8 +42,8 @@ class App extends Component {
     render() {
         return <div className={App}>
             <ul>
+                <button onClick={() => this.socket.emit('add-message')}>Add message</button>
                 {this.renderMessages()}
-                <button onClick={() => this.socket.emit('add-message')}>add message</button>
             </ul>
         </div>;
     }
