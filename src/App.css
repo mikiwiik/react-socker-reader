@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+.App-message {
+    background-color: white;
+    transition: background-color, 1s;
+}
+
+.App-message-updated {
+    background-color: yellow;
+    transition: background-color, 1s;
+}

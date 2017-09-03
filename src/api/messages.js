@@ -3,7 +3,11 @@ import faker from'faker';
 const messages = [];
 
 function createMessage(id) {
-    return {id, message: faker.company.catchPhrase()};
+    return {
+        id,
+        message: faker.company.catchPhrase(),
+        updated: false,
+    };
 }
 
 for (let i = 0; i < 10; i++) {
@@ -21,7 +25,7 @@ export default {
     },
     toggle(messageId) {
         const toggled = messages[messageId];
-        toggled.message = toggled.message.split('').reverse().join('');
+        toggled.updated = !toggled.updated;
         messages[messageId] = toggled;
         return toggled;
     }
