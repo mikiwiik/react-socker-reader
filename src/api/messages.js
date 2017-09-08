@@ -1,15 +1,14 @@
 import faker from'faker';
 
-const messages = [];
-
 function createMessage(id) {
     return {
-        id,
+        id: id.toString(),
         message: faker.company.catchPhrase(),
         updated: false,
     };
 }
 
+const messages = [];
 for (let i = 0; i < 10; i++) {
     messages.push(createMessage(i));
 }
