@@ -12,12 +12,16 @@ export default class Message extends PureComponent {
         onClick: PropTypes.func.isRequired,
     };
 
+    onClickHandler = () => {
+        this.props.onClick(this.props.id)
+    };
+
     render() {
         return <li key={this.props.id}>
             <span className={classNames('Message', {
                 'Message-updated': (this.props.updated)
             })}>{this.props.message}</span>
-            <button onClick={this.props.onClick}>Update</button>
+            <button onClick={this.onClickHandler}>Update</button>
         </li>;
     }
 }
