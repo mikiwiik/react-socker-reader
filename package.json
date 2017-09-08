@@ -14,11 +14,15 @@
     "socket.io": "^2.0.3",
     "socket.io-client": "^2.0.3"
   },
+  "devDependencies": {
+    "babel-watch": "^2.0.7"
+  },
   "scripts": {
     "start": "concurrently -k \"yarn dev:frontend\" \"yarn run api\"",
     "dev:frontend": "react-scripts start",
     "build": "react-scripts build",
     "api": "babel-node src/api/server.js --presets env",
+    "api:watch": "babel-watch src/api/server.js --presets env",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
