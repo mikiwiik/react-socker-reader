@@ -18,8 +18,8 @@
     "babel-watch": "^2.0.7"
   },
   "scripts": {
-    "start": "concurrently -k \"yarn dev:frontend\" \"yarn run api\"",
-    "dev:frontend": "react-scripts start",
+    "dev": "concurrently -k \"yarn frontend:dev\" \"yarn run api:watch\"",
+    "frontend:dev": "react-scripts start",
     "build": "react-scripts build",
     "api": "babel-node src/api/server.js --presets env",
     "api:watch": "babel-watch src/api/server.js --presets env",
