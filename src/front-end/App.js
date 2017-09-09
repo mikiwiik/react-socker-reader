@@ -23,7 +23,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-        messages: state.messages,
+        messages: state.get('messages').toJS(),
     }
 }
 

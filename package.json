@@ -7,6 +7,7 @@
     "classnames": "^2.2.5",
     "concurrently": "^3.5.0",
     "faker": "^4.1.0",
+    "immutable": "^3.8.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
