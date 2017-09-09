@@ -15,7 +15,7 @@ const io = socketio(server)
         );
 
         client.on('toggle-message', (messageId) =>
-            io.emit('message-toggled', messages.toggle(messageId))
+            io.emit('message-updated', messages.toggle(messageId))
         );
 
         client.on('disconnect', () =>

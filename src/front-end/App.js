@@ -20,7 +20,7 @@ class App extends Component {
             .on('message-added', (message) => {
                 this.setState({messages: [...this.state.messages, message]});
             })
-            .on('message-toggled', (message) => {
+            .on('message-updated', (message) => {
                 const messages = [...this.state.messages];
                 messages[message.id] = message;
                 this.setState({messages: messages});
