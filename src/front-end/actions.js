@@ -7,7 +7,8 @@ export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const MESSAGE_ADDED = 'MESSAGE_ADDED';
 
 export const TOGGLE_MESSAGE = 'TOGGLE_MESSAGE';
-export const MESSAGE_TOGGLED = 'MESSAGE_TOGGLED';
+
+export const MESSAGE_UPDATED = 'MESSAGE_UPDATED';
 
 export function getActions(dispatch) {
     const socket = io('http://localhost:8080')
@@ -26,9 +27,9 @@ export function getActions(dispatch) {
                 data: message
             })
         )
-        .on('message-toggled', (message) =>
+        .on('message-updated', (message) =>
             dispatch({
-                type: MESSAGE_TOGGLED,
+                type: MESSAGE_UPDATED,
                 data: message
             })
         )

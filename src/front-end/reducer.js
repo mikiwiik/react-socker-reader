@@ -10,7 +10,7 @@ export default function reducer(state = defaultState, action) {
             return { ...state, messages: action.data };
         case actions.MESSAGE_ADDED:
             return { ...state, messages: [...state.messages, action.data] };
-        case actions.MESSAGE_TOGGLED:
+        case actions.MESSAGE_UPDATED:
             const messages = [...state.messages];
             messages[action.data.id] = action.data;
             return { ...state, messages };
