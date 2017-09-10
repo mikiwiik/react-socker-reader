@@ -1,3 +1,17 @@
 .App {
-  text-align: center;
+    margin-top: 1em;
+    display: flex;
+    margin-bottom: 1em;
 }
+
+.App-topButtons {
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.App-gutter {
+    flex-grow: 1;
+}
+
+.App-mainView { }

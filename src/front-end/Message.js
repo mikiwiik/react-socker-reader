@@ -13,11 +13,11 @@ export default class Message extends PureComponent {
     };
 
     render() {
-        return <li key={this.props.id}>
-            <span className={classNames('Message', {
-                'Message-updated': (this.props.updated)
+        return <div className="Message" key={this.props.id}>
+            <span className={classNames('Message-text', {
+                'Message-text-updated': (this.props.updated)
             })}>{this.props.message}</span>
             <button onClick={this.props.onClick}>Update</button>
-        </li>;
+        </div>;
     }
 }
