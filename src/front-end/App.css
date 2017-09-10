@@ -14,4 +14,10 @@
     flex-grow: 1;
 }
 
-.App-mainView { }
+.App-mainView {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
