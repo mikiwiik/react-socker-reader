@@ -33,7 +33,8 @@ class App extends Component {
 
     renderMessages() {
         return this.state.messages.map(message =>
-            <Message id={message.id}
+            <Message key={message.id}
+                     id={message.id}
                      message={message.message}
                      updated={message.updated}
                      onClick={() => this.socket.emit('toggle-message', message.id)}/>
