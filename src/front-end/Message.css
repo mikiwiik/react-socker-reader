@@ -1,9 +1,11 @@
-.Message {
+.Message-text {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     background-color: inherit;
     transition: background-color, 1s;
 }
 
-.Message-updated {
+.Message-text-updated {
     background-color: yellow;
     transition: background-color, 1s;
 }

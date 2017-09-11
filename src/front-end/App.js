@@ -11,13 +11,16 @@ class App extends Component {
     }
 
     render() {
-        return <div className={App}>
-            <Messages
-                messages={this.props.messages}
-                addMessage={this.props.addMessage}
-                toggleMessage={this.props.toggleMessage}
-            />
-        </div>
+        return <div className="App">
+            <div className="App-gutter"/>
+            <div className="App-mainView">
+                <Messages messages={this.props.messages}
+                          addMessage={this.props.addMessage}
+                          toggleMessage={this.props.toggleMessage}
+                />
+            </div>
+            <div className="App-gutter"/>
+        </div>;
     }
 }
 
