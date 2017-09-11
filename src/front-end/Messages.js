@@ -26,10 +26,7 @@ export default class Messages extends PureComponent {
 
     render() {
         return <div>
-            <button onClick={this.props.addMessage}>Add message</button>
-            <ul>
-                {this.renderMessages()}
-            </ul>
+            {this.renderMessages()}
         </div>;
     }
 }

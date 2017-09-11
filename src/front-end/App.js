@@ -14,10 +14,12 @@ class App extends Component {
         return <div className="App">
             <div className="App-gutter"/>
             <div className="App-mainView">
+                <div className="App-topButtons" >
+                    <button onClick={this.props.addMessage}>Add message</button>
+                </div>
                 <Messages messages={this.props.messages}
                           addMessage={this.props.addMessage}
-                          toggleMessage={this.props.toggleMessage}
-                />
+                          toggleMessage={this.props.toggleMessage} />
             </div>
             <div className="App-gutter"/>
         </div>;
