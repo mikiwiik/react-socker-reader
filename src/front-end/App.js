@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import io from 'socket.io-client';
 
 import './App.css';
-import Message from './Message';
+import Messages from './Messages';
 
 class App extends Component {
 
@@ -31,15 +31,9 @@ class App extends Component {
         this.socket.emit('get-messages');
     }
 
-    renderMessages() {
-        return this.state.messages.map(message =>
-            <Message key={message.id}
-                     id={message.id}
-                     message={message.message}
-                     updated={message.updated}
-                     onClick={() => this.socket.emit('toggle-message', message.id)}/>
-        )
-    }
+    toggleMessage  = (messageId) => {
+        this.socket.emit('toggle-message', messageId)
+    };
 
     render() {
         return <div className="App">
@@ -48,7 +42,8 @@ class App extends Component {
                 <div className="App-topButtons" >
                     <button onClick={() => this.socket.emit('add-message')}>Add message</button>
                 </div>
-                {this.renderMessages()}
+                <Messages messages={this.state.messages}
+                          toggleMessage={this.toggleMessage} />
             </div>
             <div className="App-gutter"/>
         </div>;

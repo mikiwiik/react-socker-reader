@@ -5,11 +5,19 @@ import classNames from 'classnames';
 import './Message.css';
 
 export default class Message extends PureComponent {
-    static propTypes = {
+    static basicPropTypes = {
         id: PropTypes.string.isRequired,
         message: PropTypes.string.isRequired,
         updated: PropTypes.bool.isRequired,
+    };
+
+    static propTypes = {
+        ...Message.basicPropTypes,
         onClick: PropTypes.func.isRequired,
+    };
+
+    onClickHandler = () => {
+        this.props.onClick(this.props.id)
     };
 
     render() {
@@ -17,7 +25,7 @@ export default class Message extends PureComponent {
             <span className={classNames('Message-text', {
                 'Message-text-updated': (this.props.updated)
             })}>{this.props.message}</span>
-            <button onClick={this.props.onClick}>Update</button>
+            <button onClick={this.onClickHandler}>Update</button>
         </div>;
     }
 }
