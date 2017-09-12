@@ -18,7 +18,6 @@ class App extends Component {
                     <button onClick={this.props.addMessage}>Add message</button>
                 </div>
                 <Messages messages={this.props.messages}
-                          addMessage={this.props.addMessage}
                           toggleMessage={this.props.toggleMessage} />
             </div>
             <div className="App-gutter"/>

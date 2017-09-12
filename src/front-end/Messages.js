@@ -8,7 +8,6 @@ export default class Messages extends PureComponent {
         messages: PropTypes.arrayOf(
             PropTypes.shape(Message.basicPropTypes)
         ),
-        addMessage: PropTypes.func.isRequired,
         toggleMessage: PropTypes.func.isRequired,
     };
 
