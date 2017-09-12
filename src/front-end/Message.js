@@ -5,10 +5,14 @@ import classNames from 'classnames';
 import './Message.css';
 
 export default class Message extends PureComponent {
-    static propTypes = {
+    static basicPropTypes = {
         id: PropTypes.string.isRequired,
         message: PropTypes.string.isRequired,
         updated: PropTypes.bool.isRequired,
+    };
+
+    static propTypes = {
+        ...Message.basicPropTypes,
         onClick: PropTypes.func.isRequired,
     };
 

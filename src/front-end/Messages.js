@@ -6,7 +6,7 @@ import Message from './Message';
 export default class Messages extends PureComponent {
     static propTypes = {
         messages: PropTypes.arrayOf(
-            PropTypes.shape(Message.propTypes)
+            PropTypes.shape(Message.basicPropTypes)
         ),
         addMessage: PropTypes.func.isRequired,
         toggleMessage: PropTypes.func.isRequired,
